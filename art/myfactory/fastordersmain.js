@@ -25,6 +25,7 @@
   function init() {
     addCustomCSS();
     addEventListeners();
+    
   }
 
   function addEventListeners() {
@@ -59,10 +60,10 @@
     var contactIdSelect = document.getElementById('cboContactID');
 
     if (contactIdSelect) {
-      var contactIdCell = document.getElementById('tdContactID');
-      var clazz = contactIdSelect.value ? 'entryField' : 'entryField invalid'
+      var contactIdLabel = document.getElementById('tdlabContactID');
+      var txt = contactIdSelect.value ? 'Ansprechpartner' : 'Ansprechpartner <small class="red-circle">🔴</small>';
 
-      contactIdCell.className = clazz;
+      contactIdLabel.innerHTML = txt;
     }
 
     checkContactName();
@@ -73,9 +74,10 @@
     var contactNameInput = document.getElementById('txtContactName');
 
     if (contactNameInput) {
-      var clazz = contactNameInput.value ? '' : 'invalid';
+      var contactNameLabel = document.getElementById('tdlabContactName');
+      var txt = contactNameInput.value ? 'Zu Händen Text' : 'Zu Händen Text <small class="red-circle">🔴</small>';
 
-      contactNameInput.className = clazz;
+      contactNameLabel.innerHTML = txt;
     }
   }
 
@@ -83,9 +85,10 @@
     var referenceInput = document.getElementById('txtReferenceText');
 
     if (referenceInput) {
-      var clazz = referenceInput.value ? '' : 'invalid';
+      var referenceLabel = document.getElementById('tdlabReferenceText');
+      var txt = referenceInput.value ? 'Betreff' : 'Betreff <small class="red-circle">🔴</small>';
 
-      referenceInput.className = clazz;
+      referenceLabel.innerHTML = txt;
     }
   }
 
@@ -93,10 +96,10 @@
     var paymentConditionsSelect = document.getElementById('cboPaymentCondition');
 
     if (paymentConditionsSelect) {
-      var paymentConditionsCell = document.getElementById('tdPaymentCondition');
-      var clazz = paymentConditionsSelect.value ? 'entryField' : 'entryField invalid'
+      var paymentConditionsLabel = document.getElementById('tdlabPaymentCondition');
+      var txt = paymentConditionsSelect.value ? 'Zahlungskondition' : 'Zahlungskondition <small class="red-circle">🔴</small>';
 
-      paymentConditionsCell.className = clazz;
+      paymentConditionsLabel.innerHTML = txt;
     }
   }
 
@@ -104,10 +107,10 @@
     var shippingConditionsSelect = document.getElementById('cboShipmentCondition');
 
     if (shippingConditionsSelect) {
-      var shippingConditionsCell = document.getElementById('tdShipmentCondition');
-      var clazz = shippingConditionsSelect.value ? 'entryField' : 'entryField invalid'
+      var shippingConditionsLabel = document.getElementById('tdlabShipmentCondition');
+      var txt = shippingConditionsSelect.value ? 'Versandart' : 'Versandart <small class="red-circle">🔴</small>';
 
-      shippingConditionsCell.className = clazz;
+      shippingConditionsLabel.innerHTML = txt;
     }
   }
 
@@ -142,7 +145,7 @@
 
   function addCustomCSS() {
     var style = document.createElement('style');
-    var css = '.invalid { border: 3px solid #f00; } td.invalid { background: #f00; border: 0px solid #f00; }';
+    var css = '.invalid { border: 3px solid #f00; } .red-circle { color: #f00; }';
 
     style.type = 'text/css';
 
