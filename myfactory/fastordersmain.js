@@ -25,7 +25,6 @@
   function init() {
     addCustomCSS();
     addEventListeners();
-
   }
 
   function addEventListeners() {
