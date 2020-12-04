@@ -28,8 +28,6 @@
   }
   
   function insertInputRow() {
-    console.log('test2');
-
     var scannerCell = document.getElementById('tdScanner');
     var scannerRow = scannerCell.parentNode;
     var tableBody = scannerRow.parentNode;
@@ -58,8 +56,6 @@
   }
   
   function handleChange() {
-    console.log(this);
-
     var input = document.getElementById('qr-code-input');
     var val = input.value;
 
@@ -71,6 +67,7 @@
 
       input.value = '';
       scannerInput.value = str;
+      scannerInput.blur();
     }
   }
 
