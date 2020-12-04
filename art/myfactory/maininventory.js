@@ -68,6 +68,9 @@
       input.value = '';
       scannerInput.value = str;
       scannerInput.blur();
+    } else {
+      input.value = '';
+      scannerInput = '';
     }
   }
 
