@@ -1,5 +1,6 @@
 // ==UserScript==
 // @name         PEET Relabel
+// @namespace    http://tampermonkey.net/
 // @version      1.0
 // @author       Manuel
 // @match        https://mf.artgmbh.com/Logistik/Labels/ProductLabel*
