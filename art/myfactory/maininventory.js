@@ -33,11 +33,24 @@
     var scannerCell = document.getElementById('tdScanner');
     var scannerRow = scannerCell.parentNode;
     var tableBody = scannerRow.parentNode;
-
     var tr = document.createElement('tr');
 
-    tr.id = 'qr-code-input-row';
-    tr.innerHTML = '\n' + '<td class="dlgField" width="25%">QR Code scannen</td><td class="entryField" width="100%" nowrap=""><input id="qr-code-input" wfdatafld="Scanner" style="width:100%;" value=""></td>';
+    var td1 = document.createElement('td');
+    td1.className = 'dlgField';
+    td1.width = '25%';
+
+    var td2 = document.createElement('td');
+    td2.className = 'entryField';
+    td2.width = '100%';
+
+    var input = document.createElement('input');
+    input.id = 'qr-code-input-row';
+    input.style.width = '100%';
+
+    td1.appendChild(document.createTextNode('QR Code scannen'));
+    td2.appendChild(input);
+    tr.appendChild(td1);
+    tr.appendChild(td2);
 
     tableBody.insertBefore(tr, scannerRow);
   }
