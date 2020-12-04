@@ -30,7 +30,7 @@
   function insertQRInput() {
     console.log('test2');
 
-    var scannerCell = document.getElemendById('tdScanner');
+    var scannerCell = document.getElementById('tdScanner');
     var scannerRow = scannerCell.parentNode;
 
     var tableBody = scannerRow.parentNode;
