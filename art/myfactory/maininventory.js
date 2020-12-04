@@ -24,7 +24,7 @@
 
   function init() {
     console.log('init');
-    document.getElementById('chkScannerOn').value = 'on';
+    document.getElementById('chkScannerOn').checked = true;
     insertInputRow();
   }
   
