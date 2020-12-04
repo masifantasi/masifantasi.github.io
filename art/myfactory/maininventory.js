@@ -25,7 +25,6 @@
   function init() {
     console.log('test1');
     insertInputRow();
-    attachListener();
   }
   
   function insertInputRow() {
@@ -48,9 +47,7 @@
     input.id = 'qr-code-input';
     input.style.width = '100%';
     
-    addEvent(input, 'focus', function() {
-      console.log('okay');
-    });
+    addEvent(input, 'change', handleChange);
 
     td1.appendChild(document.createTextNode('QR Code scannen'));
     td2.appendChild(input);
@@ -60,24 +57,19 @@
     tableBody.insertBefore(tr, scannerRow);
   }
   
-  function attachListener() {
+  function handleChange() {
     var input = document.getElementById('qr-code-input');
-    
-    addEvent(input, 'change', function(e) {
-      console.log(e);
-      return
-      var val = input.value;
+    var val = input.value;
 
-      if (val.length > 5) {
-        var els = val.split(';');
-        var str = els[0] + els[2];
+    if (val.length > 5 && val.indexOf(';') !== -1) {
+      var els = val.split(';');
+      var str = els[0] + els[2];
 
-        var scannerInput = document.getElemendById('txtScanner');
+      var scannerInput = document.getElemendById('txtScanner');
 
-        input.value = '';
-        scannerInput.value = str;
-      }
-    });
+      input.value = '';
+      scannerInput.value = str;
+    }
   }
 
 })();
