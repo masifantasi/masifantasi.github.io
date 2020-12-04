@@ -23,9 +23,23 @@
   }
 
   function init() {
-    
+    console.log('test1');
+    insertQRInput();
   }
   
+  function insertQRInput() {
+    console.log('test2');
+
+    var scannerCell = document.getElemendById('tdScanner');
+    var scannerRow = scannerCell.parentNode;
+
+    var tableBody = scannerRow.parentNode;
+    var tr = document.createElement('tr');
+
+    tr.innerHTML = '<td class="dlgField" width="25%">QR Code scannen</td><td class="entryField" width="100%" nowrap=""><input id="qr-code-input" wfdatafld="Scanner" style="width:100%;" value=""></td>';
+
+    tableBody.insertBefore(tr, scannerRow);
+  }
   
   
   })();
