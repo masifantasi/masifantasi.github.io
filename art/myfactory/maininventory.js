@@ -23,7 +23,8 @@
   }
 
   function init() {
-    console.log('test1');
+    console.log('init');
+    document.getElementById('chkScannerOn').value = 'on';
     insertInputRow();
   }
   
