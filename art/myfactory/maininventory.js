@@ -23,7 +23,7 @@
   }
 
   function init() {
-    alert('test');
+    
   }
   
   
