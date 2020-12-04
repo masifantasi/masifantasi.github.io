@@ -47,6 +47,10 @@
     var input = document.createElement('input');
     input.id = 'qr-code-input';
     input.style.width = '100%';
+    
+    addEvent(input, 'focus', function() {
+      console.log('okay');
+    });
 
     td1.appendChild(document.createTextNode('QR Code scannen'));
     td2.appendChild(input);
@@ -59,8 +63,10 @@
   function attachListener() {
     var input = document.getElementById('qr-code-input');
     
-    addEvent(input, 'change', function() {
-      var val = this.value;
+    addEvent(input, 'change', function(e) {
+      console.log(e);
+      return
+      var val = input.value;
 
       if (val.length > 5) {
         var els = val.split(';');
