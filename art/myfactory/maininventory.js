@@ -37,9 +37,9 @@
     var tr = document.createElement('tr');
 
     tr.id = 'qr-code-input-row';
-    tableBody.insertBefore(tr, scannerRow);
- 
     tr.innerHTML = '\n' + '<td class="dlgField" width="25%">QR Code scannen</td><td class="entryField" width="100%" nowrap=""><input id="qr-code-input" wfdatafld="Scanner" style="width:100%;" value=""></td>';
+
+    tableBody.insertBefore(tr, scannerRow);
   }
 
 })();
