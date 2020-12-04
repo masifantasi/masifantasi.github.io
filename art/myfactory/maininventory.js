@@ -1,4 +1,4 @@
-// baseeditmain.js
+// maininventory.js
 
 (function() {
 
