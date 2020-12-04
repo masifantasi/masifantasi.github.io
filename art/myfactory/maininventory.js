@@ -58,6 +58,8 @@
   }
   
   function handleChange() {
+    console.log(this);
+
     var input = document.getElementById('qr-code-input');
     var val = input.value;
 
@@ -65,7 +67,7 @@
       var els = val.split(';');
       var str = els[0] + els[2];
 
-      var scannerInput = document.getElemendById('txtScanner');
+      var scannerInput = document.getElementById('txtScanner');
 
       input.value = '';
       scannerInput.value = str;
