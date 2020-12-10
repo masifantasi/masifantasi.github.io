@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         WarehouseEX
+// @name         PEET Stock Transfer
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @author       Manuel
