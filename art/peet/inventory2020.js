@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         PEET Inventory 2020
 // @namespace    http://tampermonkey.net/
-// @version      0.3
+// @version      0.4
 // @author       Manuel
 // @match        https://mf.artgmbh.com/Logistik/WarehouseEX/SinglePathMode
 // @grant        none
@@ -13,6 +13,10 @@
   const $ = window.$;
 
   const css = `
+    .content *:not(.bottom-menu) {
+      font-size: 24px!important;
+    }
+
     /* elements */
     #inpSourceWarehouse,
     #inpTargetWarehouse,
