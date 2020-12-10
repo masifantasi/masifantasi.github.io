@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         PEET Stock Transfer
+// @name         PEET Inventory 2020
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @author       Manuel
