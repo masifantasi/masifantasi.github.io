@@ -78,7 +78,7 @@
     } else if ($(el).data('bind') === 'text: TargetWarehouse().WarehouseDesc') {
       const loc = $(el).text();
 
-      $('.warehouse-info').append(`<div class="mt-2"><b>Lagerort:</b> <span id="parent-warehouse"></span></div>`);
+      $('.warehouse-info').append(`<div class="mt-1"><b>Lagerort:</b> <span id="parent-warehouse"></span></div>`);
 
       $.post('https://mf.artgmbh.com/Logistik/WarehouseEX/GetWarehouse', { desc: loc }, data => {
         const parentWarehouse = data.ParentWarehouseDesc + ' - ' + data.ParentWarehouseShort;
