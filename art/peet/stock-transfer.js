@@ -28,9 +28,8 @@
     }
 
     #toolbox-container,
-    .btn.btn-primary,
-    .scan-area-position-item__button:not([data-bind="click:DeletePosition"]),
-    .bottom-menu {
+    .header .btn.btn-primary,
+    .scan-area-position-item__button:not([data-bind="click:DeletePosition"]) {
       display: none;
     }
 
