@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         PEET Inventory 2020
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.3
 // @author       Manuel
 // @match        https://mf.artgmbh.com/Logistik/WarehouseEX/SinglePathMode
 // @grant        none
@@ -38,10 +38,6 @@
       font-weight: bold;
     }
 
-    .scan-area-position-item.new-pos-item {
-      background: rgba(255, 255, 80, .5);
-    }
-
     /* stock quantity table */
     .stock-quantity table td {
       font-family: monospace;
@@ -74,9 +70,6 @@
     } else if ($(el).hasClass('scan-area-position-item')) {
       const productNumber = $(el).find('span[data-bind="text: ProductNumber"]').text();
       const qtyCol = $(el).find('.scan-area-position-item__quantity');
-
-      $('.new-pos-item').removeClass('new-pos-item');
-      $(el).addClass('new-pos-item');
 
       $.post('https://mf.artgmbh.com/Logistik/StockReport/GetListProductStockWarehouse', { eannumber: productNumber }, data => {
         let html = '';
