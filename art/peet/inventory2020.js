@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         PEET Inventory 2020
 // @namespace    http://tampermonkey.net/
-// @version      0.6
+// @version      0.7
 // @author       Manuel
 // @match        https://mf.artgmbh.com/Logistik/WarehouseEX/SinglePathMode
 // @grant        none
@@ -45,8 +45,15 @@
       text-overflow: ellipsis;
     }
 
+    .scan-area-position-item__quantity {
+      margin: 0!important;
+    }
     .scan-area-position-item__quantity input {
       min-width: 200px;
+    }
+
+    .new-input-group__addon {
+      width: 32px;
     }
 
     .valid {
@@ -55,12 +62,17 @@
     }
 
     /* stock quantity table */
+    .stock-quantity table {
+      table-layout: fixed;
+      width: 240px;
+      border-collapse: collapse;
+    }
     .stock-quantity table td {
       font-family: monospace;
       font-size: 18px;
       white-space: nowrap;
       vertical-align: top;
-      width: 250px;
+      width: 120px;
       padding: 2px 10px;
     }
     .stock-quantity table td:first-child {
