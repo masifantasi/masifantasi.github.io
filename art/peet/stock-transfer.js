@@ -27,7 +27,10 @@
       }
     }
 
-    .scan-area-position-item__button:not([data-bind="click:DeletePosition"]) {
+    #toolbox-container,
+    .btn.btn-primary,
+    .scan-area-position-item__button:not([data-bind="click:DeletePosition"]),
+    .bottom-menu {
       display: none;
     }
 
@@ -52,6 +55,10 @@
   `;
 
   addCustomCSS();
+
+  $('.header h4').html('A.R.T. Inventur 2020');
+  $('#inpProductNumber').prop('placeholder', 'Artikelnummer scannen');
+  $('#inpTargetWarehouse').prop('placeholder', 'Lagerort scannen')
 
   // creation
   $(document).on('animationstart', e => {
