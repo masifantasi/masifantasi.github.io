@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         PEET Inventory 2020
 // @namespace    http://tampermonkey.net/
-// @version      0.5
+// @version      0.6
 // @author       Manuel
 // @match        https://mf.artgmbh.com/Logistik/WarehouseEX/SinglePathMode
 // @grant        none
@@ -40,8 +40,13 @@
     .scan-area-position-item__name {
       white-space: nowrap;
       max-width: 400px;
+      min-width: 100px;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+
+    .scan-area-position-item__quantity input {
+      min-width: 200px;
     }
 
     .valid {
@@ -89,7 +94,7 @@
           html += `<tr><td data-warehouse-id="${ el.WarehouseID }" data-quantity="${ el.Quantity }">${ formatNum(el.Quantity) }</td><td>${ el.WarehouseShortDesc }</td></tr>`;
         });
 
-        $(qtyCol).after(`<div class="mr-4 stock-quantity"><table>${ html }</table></div>`);
+        $(qtyCol).after(`<div class="stock-quantity"><table>${ html }</table></div>`);
         compareQuantities();
       });
     } else if ($(el).data('bind') === 'text: TargetWarehouse().WarehouseDesc') {
