@@ -12,6 +12,9 @@
       setTimeout(init, 0);
     });
   }
+  
+  // order type
+  var orderType = '';
 
   // add event helper
   function addEvent(obj, type, fn) {
@@ -23,9 +26,10 @@
   }
 
   function init() {
+    orderType = document.getElementById('txtOrderTypeDesc').value;
+
     addCustomCSS();
-    addEventListeners();
-    
+    addEventListeners();    
   }
 
   function addEventListeners() {
@@ -50,8 +54,11 @@
   window.mFrontendEventBeforeSave = checkEverything;
 
   function checkEverything() {
-    checkContactId();
-    checkDeliveryDates();
+    if (orderType === 'Auftragsbestätigung') {
+      checkContactId();
+      checkDeliveryDates();
+    }
+
     checkPaymentConditions();
     checkShippingConditions();
   }
