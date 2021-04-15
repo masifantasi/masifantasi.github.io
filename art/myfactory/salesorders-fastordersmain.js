@@ -12,9 +12,6 @@
       setTimeout(init, 0);
     });
   }
-  
-  // order type
-  var orderType = '';
 
   // add event helper
   function addEvent(obj, type, fn) {
@@ -26,8 +23,6 @@
   }
 
   function init() {
-    orderType = document.getElementById('txtOrderTypeDesc').value;
-
     addCustomCSS();
     addEventListeners();    
   }
@@ -54,6 +49,8 @@
   window.mFrontendEventBeforeSave = checkEverything;
 
   function checkEverything() {
+    var orderType = document.getElementById('txtOrderTypeDesc').value;
+
     if (orderType === 'Auftragsbestätigung') {
       checkContactId();
       checkDeliveryDates();
